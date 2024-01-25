@@ -1,0 +1,155 @@
+/* Üldine stiil */
+body {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    height: 80vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* Animatsioon ülesse */
+.bounce-ball {
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    animation: bounce-up infinite ease-in-out;
+}
+.ball-shadow {
+    width: 55px;
+    height: 10px;
+    background: #00000060;
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: shadow infinite ease-in-out;
+    position: relative;
+    top: -7px;
+}
+.animation-speed {
+    animation-duration: 2s;
+}
+
+/* Animatsioon üles-alla */
+@keyframes bounce-up {
+    0%, 100% {
+        transform: translateY(0);
+        margin-top: 25px;
+        height: 25px;
+        background-color: #d60827;
+    }
+    5% {
+        margin-top: 0;
+        height: 50px;
+        width: 35px;
+        background-color: #3498db;
+    }
+    35% {
+        margin-top: 0;
+        height: 50px;
+    }
+    50% {
+        transform: translateY(-50vh);
+        margin-top: 25px;
+        height: 25px;
+        width: 55px;
+    }
+    65% {
+        margin-top: 0;
+        height: 50px;
+        background-color: #3498db;
+    }
+    95% {
+        margin-top: 0;
+        height: 50px;
+        width: 35px;
+    }
+}
+/* Animatsioon vari */
+@keyframes shadow {
+    0%, 100% {
+        width: 65px;
+    }
+    5% {
+        width: 55px;
+    }
+    35% {
+        width: 75px;
+    }
+    50% {
+        width: 75px;
+        filter: blur(6px);
+    }
+    65% {
+        width: 75px;
+    }
+    95% {
+        width: 55px;
+    }
+}
+
+
+.btn {
+    width: 100px;
+    height: 3rem;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem !important;
+}
+
+.btn-one:hover ~ .bounce-ball, .btn-one:hover ~ .ball-shadow {
+    animation-duration: .5s;
+}
+.btn-two:hover ~ .bounce-ball, .btn-two:hover ~ .ball-shadow {
+    animation-duration: 3s;
+}
+.btn-three:hover ~ .bounce-ball, .btn-three:hover ~ .ball-shadow {
+    animation-duration: 7s;
+}
+
+.btn {
+    position: absolute;
+    top: 5vh;
+}
+.btn-one {
+    left: 40%;
+}
+.btn-three {
+    right: 40%;
+}
+
+.btn:hover {
+    background-color: rgb(113, 119, 152);
+    transition: .5s all;
+    width: 130px;
+    height: 4rem;
+    color: white;
+    border-radius: 5rem;
+}
+
+.radio1:checked ~ .bounce-ball, .radio1:checked ~ .ball-shadow {
+    animation-duration: .5s;
+}
+.radio2:checked ~ .bounce-ball, .radio2:checked ~ .ball-shadow {
+    animation-duration: 3s;
+}
+.radio3:checked ~ .bounce-ball, .radio3:checked ~ .ball-shadow {
+    animation-duration: 7s;
+}
+
+.check {
+    height: 2rem;
+}
+input {
+    position: relative;
+    bottom: -120px;
+}
